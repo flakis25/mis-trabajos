@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteo de Números Aleatorios</title>
+    
+    <style>
+       body {
+            background: linear-gradient(to bottom, #FFFF00, #FFD700);
+            height: 100vh; 
+            margin: 20; 
+           
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 20 auto;
+            padding: 20px;
+            background-color: ghostwhite; /* Fondo semitransparente blanco */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+       #logo {
+            max-width: 30%;
+        }
+
+
+        #number {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+   <CENTER>
+    <div class="container">
+        <a href="https://isanagustin.edu.pe/portal/" target="_blank">
+            <img id="logo" src="logotipo.png" alt="Logo">
+        </a>
+        <h1> Números Aleatorios</h1>
+        <p>Números:</p>
+        <div id="number">0</div>
+        <button id="startButton" onclick="startSorteo()">Iniciar</button>
+        <button id="stopButton" onclick="stopSorteo()" disabled>Detener</button>
+    </div>
+
+    <script>
+        let intervalId;
+
+        function startSorteo() {
+            document.getElementById('startButton').disabled = true;
+            document.getElementById('stopButton').disabled = false;
+            
+            intervalId = setInterval(function() {
+                const numeroAleatorio = Math.floor(Math.random() * 30) + 1;
+                document.getElementById('number').textContent = numeroAleatorio;
+            }, 500);
+        }
+
+        function stopSorteo() {
+            document.getElementById('startButton').disabled = false;
+            document.getElementById('stopButton').disabled = true;
+            
+            clearInterval(intervalId);
+        }
+    </script>
+    
+
+
+<html>
+<head>
+    <title>LEDY DAVILA GUEVARA</title>
+</head>
+<body>
+    <footer>
+        <marquee behavior="scroll" direction="left">
+            LEDY DAVILA GUEVARA
+        </marquee>
+    </footer>
+</body>
+</html>
+</CENTER>
+</body>
+
+</html>
